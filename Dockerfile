@@ -33,6 +33,9 @@ COPY --from=0 /app/config config
 COPY --from=0 /app/lib lib
 COPY --from=0 /app/node_modules node_modules
 
+# install docker
+RUN curl -sSL https://get.docker.com/ | sh
+
 # run in production mode on port 8080
 EXPOSE 8080
 ENV PORT 8080
